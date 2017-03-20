@@ -13,7 +13,7 @@ public class GroupDataProvider {
     }
 
     @org.testng.annotations.DataProvider(name = "dataProvider")
-    public Object[][] provideData(ITestContext context) {
+    public Object [][] provideData(ITestContext context) {
 
         Object[][] result = null;
 

@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Test-class Suite" parallel="tests" thread-count="2">
-    <test name="Test-class test 1">
+    <test name="Test-class test 1" parallel="tests" thread-count="2">
         <parameter name="test-name" value="Test-class test 1" />
         <classes>
             <class name="example_5.ParallelSuiteTest" />

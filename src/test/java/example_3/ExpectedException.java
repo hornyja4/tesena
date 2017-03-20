@@ -9,7 +9,7 @@ public class ExpectedException {
     @Test(expectedExceptions = RuntimeException.class)
     public void expectedExceptionTest(){
         System.out.println("@Test - expectedExceptionTest");
-        throw new RuntimeException();
+        //throw new RuntimeException();
     }
 
 }
