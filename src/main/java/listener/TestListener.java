@@ -1,6 +1,12 @@
 package listener;
 
+import driver.DriverManager;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
 import org.testng.*;
+
+import java.io.File;
+import java.io.IOException;
 
 public class TestListener implements ITestListener, ISuiteListener, IInvokedMethodListener {
 
@@ -30,6 +36,22 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
     }
 
     public void onTestFailure(ITestResult result) {
+
+        //File images = new File("C:\\User\\JHornych\\Desktop\\tesena\\target\\images");
+        //images.mkdir();
+
+
+        DriverManager driverManager = DriverManager.getInstance();
+        File screenshot = driverManager.getDriver().getScreenshotAs(OutputType.FILE);
+
+        System.out.println(screenshot.getAbsolutePath());
+
+        try {
+            FileUtils.copyFile(screenshot, new File("..\\target\\images\\screenshot.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         System.out.println("Failure!!!!!!!!");
     }
 

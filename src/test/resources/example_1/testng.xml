@@ -3,6 +3,10 @@
 <!-- @BeforeSuite -->
 <suite name="TestAll">
 
+    <listeners>
+        <listener class-name="listener.Reporter"/>
+    </listeners>
+
     <!-- @BeforeTest -->
     <test name="case 1">
         <classes>

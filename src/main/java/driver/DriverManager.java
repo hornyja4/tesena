@@ -56,8 +56,6 @@ public class DriverManager {
                 e.printStackTrace();
             }
 
-
-
         }else{
 
             Platform platform = PropertiesManager.getPlatform();
@@ -104,7 +102,7 @@ public class DriverManager {
      * @param element
      */
     public void waitForElement(final WebElement element) {
-        Wait<WebDriver> wait = new WebDriverWait(driver, 50);
+        Wait<WebDriver> wait = new WebDriverWait(driver, 5);
         wait.until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {
                 return element.isDisplayed();
@@ -122,7 +120,7 @@ public class DriverManager {
                         return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
                     }
                 };
-        Wait<WebDriver> wait = new WebDriverWait(driver, 50);
+        Wait<WebDriver> wait = new WebDriverWait(driver, 5);
         wait.until(expectation);
     }
 }
