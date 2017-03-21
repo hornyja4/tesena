@@ -22,7 +22,7 @@
                         <remote>true</remote>
                     </systemPropertyVariables>
                     <suiteXmlFiles>
-                        <suiteXmlFile>test/resources/example_5/testng.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/example_5/testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
