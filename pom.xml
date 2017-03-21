@@ -17,9 +17,13 @@
                 <configuration>
                     <systemPropertyVariables>
                         <URL>http://demo.redmine.org</URL>
-                        <remoteURL>https://janhornych1:wtMuouTXj1wAZxwCwzhQ@hub-cloud.browserstack.com/wd/hub</remoteURL>
-                        <remote>false</remote>
+                        <!-- https://janhornych1:wtMuouTXj1wAZxwCwzhQ@hub-cloud.browserstack.com/wd/hub -->
+                        <remoteURL>http://localhost:4444/wd/hub/</remoteURL>
+                        <remote>true</remote>
                     </systemPropertyVariables>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
                 </configuration>
             </plugin>
             <plugin>
