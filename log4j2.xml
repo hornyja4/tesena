@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS}  %-5level %msg%n"/>
+        </Console>
+        <File name="TestTimer" fileName="target/test_reports/logs/tests.log" immediateFlush="false" append="true">
+            <PatternLayout pattern="%d{dd.MM.YYYY HH:mm:ss} %msg%n"/>
+        </File>
+        <File name="MethodTimer" fileName="target/test_reports/logs/methods.log" immediateFlush="false" append="true">
+            <PatternLayout pattern="%d{dd.MM.YYYY HH:mm:ss} %msg%n"/>
+        </File>
+        <File name="AnnotationTimer" fileName="target/test_reports/logs/annotated.log" immediateFlush="false"
+              append="true">
+            <PatternLayout pattern="%d{dd.MM.YYYY HH:mm:ss} %msg%n"/>
+        </File>
+        <File name="TestRunsLogger" fileName="target/test_reports/logs/test_runs.log" immediateFlush="true"
+              append="true">
+            <PatternLayout pattern="%d{dd.MM.YYYY HH:mm:ss} %msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="MethodTimer" level="all" additivity="false">
+            <AppenderRef ref="MethodTimer"/>
+        </Logger>
+        <Logger name="TestTimer" level="all" additivity="false">
+            <AppenderRef ref="TestTimer"/>
+        </Logger>
+        <Logger name="AnnotationTimer" level="all" additivity="false">
+            <AppenderRef ref="AnnotationTimer"/>
+        </Logger>
+        <Logger name="TestRunsLogger" level="all" additivity="false">
+            <AppenderRef ref="TestRunsLogger"/>
+        </Logger>
+        <Root level="all" includeLocation="false">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
